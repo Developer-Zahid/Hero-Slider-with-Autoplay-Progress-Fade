@@ -1,0 +1,259 @@
+:root{
+    --color-primary: #e0fee6;
+    --color-navigation-bg-rgb: 69, 71, 67;
+    --easing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    --font-primary: "Roboto", sans-serif;
+}
+
+*,
+*::before,
+*::after
+{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body{
+    font-family: var(--font-primary);
+    font-weight: 400;
+}
+
+img,
+svg
+{
+    display: block;
+    max-width: 100%;
+}
+
+.container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1440px;
+    }
+}
+
+.tinyflow-slider{
+    width: 100%;
+}
+
+.tinyflow-slide{
+    min-height: 100vh;
+    min-height: 100svh;
+    position: relative;
+    isolation: isolate;
+    display: -ms-grid;
+    display: grid;
+    -ms-flex-line-pack: center;
+        align-content: center;
+}
+
+.tinyflow-slide__background,
+.tinyflow-slide__background::after,
+.tinyflow-slide__background__element
+{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.tinyflow-slide__background::after{
+    content: '';
+    background-color: rgba(0,0,0,0.25);
+}
+
+.tinyflow-slide__background{
+    overflow: hidden;
+}
+
+.tinyflow-slide__background__element{
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+    -o-object-fit: cover;
+       object-fit: cover;
+    -webkit-transition: -webkit-transform calc(var(--data-speed, 300) * 1ms) linear calc(var(--data-speed, 300) * 1ms);
+    transition: -webkit-transform calc(var(--data-speed, 300) * 1ms) linear calc(var(--data-speed, 300) * 1ms);
+    -o-transition: transform calc(var(--data-speed, 300) * 1ms) linear calc(var(--data-speed, 300) * 1ms);
+    transition: transform calc(var(--data-speed, 300) * 1ms) linear calc(var(--data-speed, 300) * 1ms);
+    transition: transform calc(var(--data-speed, 300) * 1ms) linear calc(var(--data-speed, 300) * 1ms), -webkit-transform calc(var(--data-speed, 300) * 1ms) linear calc(var(--data-speed, 300) * 1ms);
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    pointer-events: none;
+}
+
+.swiper-slide-active .tinyflow-slide__background__element{
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition-delay: 0ms;
+         -o-transition-delay: 0ms;
+            transition-delay: 0ms;
+}
+
+.tinyflow-slide__card{
+    color: var(--color-primary);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.tinyflow-slide__content{
+    position: relative;
+    -webkit-transition: all calc((var(--data-speed, 300) / 2) * 1ms) var(--easing-function);
+    -o-transition: all calc((var(--data-speed, 300) / 2) * 1ms) var(--easing-function);
+    transition: all calc((var(--data-speed, 300) / 2) * 1ms) var(--easing-function);
+}
+
+.swiper-slide:not(.swiper-slide-active) .tinyflow-slide__content{
+    opacity: 0;
+    visibility: hidden;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    pointer-events: none;
+}
+
+.swiper-slide.swiper-slide-active .tinyflow-slide__content{
+    -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+            transform: translateY(0%);
+}
+
+.swiper-slide.swiper-slide-prev .tinyflow-slide__content{
+    -webkit-transform: translateY(-10%);
+        -ms-transform: translateY(-10%);
+            transform: translateY(-10%);
+}
+
+.swiper-slide.swiper-slide-next .tinyflow-slide__content{
+    -webkit-transform: translateY(10%);
+        -ms-transform: translateY(10%);
+            transform: translateY(10%);
+}
+
+.tinyflow-slide__content__title{
+    font-size: clamp(26px, 2.5vw, 2.4rem);
+    line-height: 1.25;
+    font-weight: 500;
+    max-width: 26ch;
+    margin-bottom: 3rem;
+}
+
+.tinyflow-slide__content__text{
+    font-size: 18px;
+}
+
+.tinyflow-slider__arrow{
+    --_size: 48px;
+    position: absolute;
+    z-index: 2;
+    bottom: 40px;
+    -webkit-transform: translate(var(--_translateX, 0), 0);
+        -ms-transform: translate(var(--_translateX, 0), 0);
+            transform: translate(var(--_translateX, 0), 0);
+    width: var(--_size);
+    height: var(--_size);
+    font-size: calc(var(--_size) / 3);
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 10rem;
+    color: var(--color-primary);
+    background-color: rgba(var(--color-navigation-bg-rgb), 0.35);
+    -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+    border: 0;
+    cursor: pointer;
+    -webkit-transition: background-color 0.05s var(--easing-function);
+    -o-transition: background-color 0.05s var(--easing-function);
+    transition: background-color 0.05s var(--easing-function);
+}
+
+.tinyflow-slider__arrow--prev{
+    --_translateX: 0;
+}
+
+.tinyflow-slider__arrow--next{
+    --_translateX: calc(var(--_size) + 15px);
+}
+
+.tinyflow-slider__arrow__progress{
+    --_progress: 0;
+    position: absolute;
+    inset: 0;
+    width: var(--_size);
+    height: var(--_size);
+    stroke: var(--color-primary);
+    -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    stroke-dasharray: var(--_progress) 100;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    pointer-events: none;
+}
+
+.tinyflow-slider__arrow:active{
+    background-color: rgba(var(--color-navigation-bg-rgb), 0.5);
+}
+
+@media (hover:hover) {
+    .tinyflow-slider__arrow:hover,
+    .tinyflow-slider__arrow:focus-visible
+    {
+        background-color: rgba(var(--color-navigation-bg-rgb), 0.5);
+    }
+}

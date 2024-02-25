@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Slider with Autoplay Progress Fade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+    <!-- Tinyflow Swiper Slider -->
+    <section class="swiper tinyflow-slider" data-speed="1000" data-autoplay-delay="8000">
+        <div class="container">
+            <button type="button" aria-label="Prev" class="tinyflow-slider__arrow tinyflow-slider__arrow--prev" data-slider-arrow="prev">
+                <svg width="1em" height="1em" fill="none" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" viewBox="0 0 20 20">
+                    <path d="m14 18-8-8 8-8" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+                </svg>
+            </button>
+            <button type="button" aria-label="Next" class="tinyflow-slider__arrow tinyflow-slider__arrow--next" data-slider-arrow="next">
+                <svg width="1em" height="1em" fill="none" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" viewBox="0 0 20 20">
+                    <path d="m6 18 8-8-8-8" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+                </svg>
+                <svg class="tinyflow-slider__arrow__progress" width="100%" height="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M39 20C39 30.4934 30.4934 39 20 39C9.50659 39 1 30.4934 1 20C1 9.50659 9.50659 1 20 1C30.4934 1 39 9.50659 39 20Z" pathLength="100" stroke="currentColor" stroke-width="2"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="tinyflow-slide">
+                    <figure class="tinyflow-slide__background">
+                        <img class="tinyflow-slide__background__element" src="https://images.unsplash.com/photo-1664575599618-8f6bd76fc670?q=80&w=1920&auto=format" alt="Business" loading="lazy" draggable="false" />
+                    </figure>
+                    <div class="tinyflow-slide__card">
+                        <div class="container">
+                            <div class="tinyflow-slide__content">
+                                <h1 class="tinyflow-slide__content__title">1 One of AngelList’s biggest benefits is its all-in-one software-first approach to admin, legal and tax services.</h1>
+                                <p class="tinyflow-slide__content__text">Cindy Bi, GP, CapitalX</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="tinyflow-slide">
+                    <figure class="tinyflow-slide__background">
+                        <video class="tinyflow-slide__background__element" poster="https://images.unsplash.com/photo-1665686308827-eb62e4f6604d?q=80&w=1920&auto=format" autoplay loop muted playsinline>
+                            <source src="https://cutt.ly/lwNbfLp0" type="video/mp4" />
+                        </video>
+                    </figure>
+                    <div class="tinyflow-slide__card">
+                        <div class="container">
+                            <div class="tinyflow-slide__content">
+                                <h1 class="tinyflow-slide__content__title">2 AngelList takes the complexity and hassle out of launching a new investment vehicle so we can focus on picking the companies we want to invest in and supporting the founders</h1>
+                                <p class="tinyflow-slide__content__text">Brian Nichols, GP, Hustle Fund</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="tinyflow-slide">
+                    <figure class="tinyflow-slide__background">
+                        <img class="tinyflow-slide__background__element" src="https://images.unsplash.com/photo-1665686310429-ee43624978fa?q=80&w=1920&auto=format" alt="Business" loading="lazy" draggable="false" />
+                    </figure>
+                    <div class="tinyflow-slide__card">
+                        <div class="container">
+                            <div class="tinyflow-slide__content">
+                                <h1 class="tinyflow-slide__content__title">3 it was crucial to get moving quickly and AngelList enabled a seamless launch.</h1>
+                                <p class="tinyflow-slide__content__text">Nichole Wischoff, GP, Wischoff Ventures</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
